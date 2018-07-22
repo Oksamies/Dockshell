@@ -1,15 +1,24 @@
-FROM node:0.10.38
-MAINTAINER Nathan LeClaire <nathan@docker.com>
+FROM node:8.11.3-slim
 
-ADD . /app
-WORKDIR /app
-RUN npm install
-RUN apt-get update
-RUN apt-get install -y vim
-RUN useradd -d /home/term -m -s /bin/bash term
-RUN echo 'term:term' | chpasswd
+RUN apt-get update \
+    && apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common \
+    python \
+    build-essential \
+    && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
+    && add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/debian \
+    $(lsb_release -cs) stable" \
+    && apt-get update \
+    && apt-get install -y docker-ce=18.06.0~ce~3-0~debian
 
-EXPOSE 3000
+COPY . /var/www/dockshell
+RUN cd /var/www/dockshell && npm install
 
+EXPOSE 8100
+WORKDIR /root/
 ENTRYPOINT ["node"]
-CMD ["app.js", "-p", "3000"]
+CMD ["/var/www/dockshell/app.js", "-p", "8100"]
