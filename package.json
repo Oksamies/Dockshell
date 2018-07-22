@@ -8,12 +8,6 @@
         "optimist": "^0.6"
     },
     "devDependencies": {
-        "load-grunt-tasks": "^3.0",
-        "grunt": "^0.4",
-        "grunt-shell": "^1.1",
-        "grunt-mkdir": "^0.1",
-        "grunt-git": "^0.3",
-        "grunt-contrib-clean": "^0.6"
     },
     "description": "Web based shell for managing docker containers",
     "main": "app.js",
