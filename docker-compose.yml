@@ -6,3 +6,5 @@ services:
     ports:
       - "8100:8100"
     container_name: dockshell
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
