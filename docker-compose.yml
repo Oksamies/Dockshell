@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   dockshell:
-    build: .  # Replace with mythicmaniac/dockshell when including in a project
+    build: .  # Replace with oksamies/dockshell when including in a project
     ports:
       - "8100:8100"
     container_name: dockshell

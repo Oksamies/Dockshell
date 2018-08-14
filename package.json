@@ -12,13 +12,13 @@
     "main": "app.js",
     "repository": {
         "type": "git",
-        "url": "git://github.com/MythicManiac/Dockshell.git"
+        "url": "git://github.com/Oksamies/Dockshell.git"
     },
-    "author": "Mythic <mythicmaniac@gmail.com> (https://github.com/MythicManiac)",
+    "author": "Oksamies <Oksamies@gmail.com> (https://github.com/Oksamies)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/MythicManiac/Dockshell/issues"
+        "url": "https://github.com/Oksamies/Dockshell/issues"
     },
-    "homepage": "https://github.com/MythicManiac/Dockshell",
+    "homepage": "https://github.com/Oksamies/Dockshell",
     "preferGlobal": "true"
 }

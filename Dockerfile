@@ -16,9 +16,11 @@ RUN apt-get update \
     && apt-get install -y docker-ce=18.06.0~ce~3-0~debian
 
 COPY . /var/www/dockshell
+COPY --from=library/docker:latest /usr/local/bin/docker /usr/bin/docker
+COPY --from=docker/compose:latest /usr/local/bin/docker-compose /usr/bin/docker-compose
 RUN cd /var/www/dockshell && npm install
 
 EXPOSE 8100
-WORKDIR /root/
+WORKDIR /root/workcode
 ENTRYPOINT ["node"]
 CMD ["/var/www/dockshell/app.js", "-p", "8100"]
